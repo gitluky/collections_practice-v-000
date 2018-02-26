@@ -1,25 +1,24 @@
+require 'pry'
 def sort_array_asc(array)
   array.sort
 end
 
 def sort_array_desc(array)
-  array.sort { |a,b| b <=> a}
+  array.sort {|a,b| b<=>a}
 end
 
 def sort_array_char_count(array)
-  array.sort { |a,b| a.length <=> b.length}
+  array.sort {|a,b| a.length <=> b.length}
 end
 
 def swap_elements(array)
-  array[1,2] = array[1,2].reverse
+  array[1], array[2] = array[2],array[1]
   array
 end
 
-def swap_elements_from_to(array, index, destination_index)
-  backup = array[destination_index]
-  array[destination_index] = array[index]
-  array[index] = backup
-  return array
+def swap_elements_from_to(array, index, destination)
+  array[destination], array[index] = array[index],  array[destination]
+  array
 end
 
 def reverse_array(array)
@@ -35,15 +34,12 @@ def find_a(array)
 end
 
 def sum_array(array)
-  array.inject {|sum, n| sum + n}
+  array.inject(:+)
 end
 
 def add_s(array)
-  array.each_with_index.collect do |element, index|
-     if index != 1
-       element+"s"
-     else
-       element
-     end
-  end
+  array.each {do }|word|
+    if word != array[1]
+      word = word + "s"
+    end}
 end
