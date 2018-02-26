@@ -38,7 +38,7 @@ def sum_array(array)
 end
 
 def add_s(array)
-  array.each {|word| word[word.length-1] = 's'}
+  array.each {|word| word[word.length] = 's'}
 end
 
 puts add_s(["hand","feet", "knee", "table"])
