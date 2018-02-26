@@ -43,3 +43,5 @@ def add_s(array)
       word = word + "s"
     end}
 end
+
+add_s(["hand","feet", "knee", "table"])
